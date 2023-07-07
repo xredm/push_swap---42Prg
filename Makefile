@@ -6,12 +6,11 @@
 #    By: xredm <xredm@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/11 15:25:48 by xredm             #+#    #+#              #
-#    Updated: 2023/07/07 16:56:44 by xredm            ###   ########.fr        #
+#    Updated: 2023/07/07 17:26:42 by xredm            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-BONUS = checker
 CC = cc
 FLAGS = -g -Wall -Wextra -Werror
 RM = rm -f
@@ -19,7 +18,6 @@ HEADER = ./include/push_swap.h
 LIBFT_FILE = ./libft/libft.a
 LIBFT_LOC = ./libft/
 SRCS = $(wildcard ./src/*.c) 
-BONUS_SRCS = $(wildcard ./src/checker/*.c)
 
 # Lets add some color
 CYAN := \033[0;36m
@@ -33,8 +31,6 @@ RESET := \033[0m
 
 all: $(NAME)
 
-bonus: $(BONUS)
-
 libft: $(LIBFT_FILE)
 
 $(NAME): $(LIBFT_FILE)
@@ -46,16 +42,6 @@ $(NAME): $(LIBFT_FILE)
 	@echo "$(CYAN)         -------------------          $(RESET)"
 	@echo "$(CYAN)<3----------------------------------<3$(RESET)"
 	@echo "												 	   "
-
-$(BONUS): $(LIBFT_FILE)
-	$(CC) $(FLAGS) $(BONUS_SRCS) $(LIBFT_FILE) -o $(BONUS)
-	@echo "													    "
-	@echo "$(MAGENTA)===================================$(RESET)"
-	@echo "$(MAGENTA)      -------------------          $(RESET)"
-	@echo "$(YELLOW)$(BOLD)The $(BONUS) is also doing alright!$(RESET)"
-	@echo "$(MAGENTA)      -------------------          $(RESET)"
-	@echo "$(MAGENTA)===================================$(RESET)"
-	@echo "												 	    "
 
 $(LIBFT_FILE):
 	@make -C $(LIBFT_LOC) all bonus --no-print-directory
@@ -72,7 +58,7 @@ $(LIBFT_FILE):
 	@echo "												 	    "
 
 clean:
-	@$(RM) $(NAME) $(BONUS)
+	@$(RM) $(NAME)
 	@make -C $(LIBFT_LOC) clean --no-print-directory
 	@echo "													    "
 	@echo "$(RED)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$(RESET)"
