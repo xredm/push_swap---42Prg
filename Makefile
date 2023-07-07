@@ -6,7 +6,7 @@
 #    By: xredm <xredm@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/11 15:25:48 by xredm             #+#    #+#              #
-#    Updated: 2023/05/15 21:31:10 by xredm            ###   ########.fr        #
+#    Updated: 2023/07/07 12:40:30 by xredm            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRCS = $(wildcard ./src/*.c)
 BONUS_SRCS = $(wildcard ./src/checker/*.c)
 
 # Lets add some color
-CYAN := CYAN := \033[0;36m
+CYAN := \033[0;36m
 MAGENTA := \033[0;35m
 YELLOW := \033[0;33m
 RED := \033[0;31m
@@ -32,6 +32,10 @@ BOLD := \033[1m
 RESET := \033[0m
 
 all: $(NAME)
+
+bonus: $(BONUS)
+
+libft: $(LIBFT_FILE)
 
 $(NAME): $(LIBFT_FILE)
 	$(CC) $(FLAGS) $(SRCS) $(LIBFT_FILE) -o $(NAME)
@@ -43,7 +47,7 @@ $(NAME): $(LIBFT_FILE)
 	@echo "$(CYAN)<3----------------------------------<3$(RESET)"
 	@echo "												 	   "
 
-bonus: $(LIBFT_FILE)
+$(BONUS): $(LIBFT_FILE)
 	$(CC) $(FLAGS) $(BONUS_SRCS) $(LIBFT_FILE) -o $(BONUS)
 	@echo "													    "
 	@echo "$(MAGENTA)===================================$(RESET)"
@@ -66,8 +70,6 @@ $(LIBFT_FILE):
 	@echo "$(YELLOW)------------------------------------$(RESET)"
 	@echo "$(YELLOW)************************************$(RESET)"
 	@echo "												 	    "
-
-libft: $(LIBFT_FILE)
 
 clean:
 	@$(RM) $(NAME) $(BONUS)
