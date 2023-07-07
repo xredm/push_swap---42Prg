@@ -6,11 +6,12 @@
 /*   By: xredm <xredm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 14:59:27 by xredm             #+#    #+#             */
-/*   Updated: 2023/07/07 16:53:22 by xredm            ###   ########.fr       */
+/*   Updated: 2023/07/07 17:40:08 by xredm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
 // mini sort for only 3 elements
 void	sort_for_three(t_stack **a)
 {
@@ -33,13 +34,14 @@ void	sort_for_three(t_stack **a)
 			sa(a, 0);
 	}
 }
+
 // reduces stack a, till there are 3 elements 
 void	push_sort_b_till3(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
-	int	i;
+	int		i;
 
-	while(stack_size(*a) > 3 && !is_sorted(*a))
+	while (stack_size(*a) > 3 && !is_sorted(*a))
 	{
 		tmp = *a;
 		i = rotation_type2b(*a, *b);
@@ -58,6 +60,7 @@ void	push_sort_b_till3(t_stack **a, t_stack **b)
 		}
 	}
 }
+
 // for b we ll stast pushing elements from stack a until there are 3 left  in a
 // when push - we sort in stack b
 // when 3 left in stack a, we sort 'em
@@ -76,10 +79,11 @@ t_stack	*sort_b(t_stack **a)
 		sort_for_three(a);
 	return (b);
 }
+
 // using this we push all the elements from stack b to a and till there are none
 t_stack	**sort_a(t_stack **a, t_stack **b)
 {
-	int	i;
+	int		i;
 	t_stack	*tmp;
 
 	while (*b)
@@ -102,9 +106,10 @@ t_stack	**sort_a(t_stack **a, t_stack **b)
 	}
 	return (a);
 }
+
 void	sort_stacks(t_stack **a)
 {
-	int	i;
+	int		i;
 	t_stack	*b;
 
 	b = NULL;
@@ -120,16 +125,12 @@ void	sort_stacks(t_stack **a)
 		if (i < (stack_size(*a) - i))
 		{
 			while ((*a)->content != min_val(*a))
-			{
 				ra(a, 0);
-			}
 		}
 		else
 		{
-			while((*a)->content != min_val(*a))
-			{
+			while ((*a)->content != min_val(*a))
 				rra(a, 0);
-			}
 		}
 	}
 }

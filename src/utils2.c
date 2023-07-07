@@ -6,7 +6,7 @@
 /*   By: xredm <xredm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:12:53 by xredm             #+#    #+#             */
-/*   Updated: 2023/07/07 16:54:21 by xredm            ###   ########.fr       */
+/*   Updated: 2023/07/07 17:45:21 by xredm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int	find_place_in_b(t_stack *b, int num)
 {
 	t_stack	*tmp;
-	int	i;
+	int		i;
 
 	i = 1;
 	if ((num > (b->content)) && (num < (find_last(b)->content)))
@@ -40,7 +40,7 @@ int	find_place_in_b(t_stack *b, int num)
 int	find_place_in_a(t_stack *a, int num)
 {
 	t_stack	*tmp;
-	int	i;
+	int		i;
 
 	i = 1;
 	if (num < (a->content) && num > (find_last(a)->content))

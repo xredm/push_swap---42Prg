@@ -6,11 +6,12 @@
 /*   By: xredm <xredm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:17:18 by xredm             #+#    #+#             */
-/*   Updated: 2023/07/07 16:53:49 by xredm            ###   ########.fr       */
+/*   Updated: 2023/07/07 17:44:42 by xredm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
 // here we find the index of the num we need
 int	get_index(t_stack *stack, int num)
 {
@@ -24,6 +25,7 @@ int	get_index(t_stack *stack, int num)
 	}
 	return (i);
 }
+
 //points to last element if the stack
 t_stack	*find_last(t_stack *stack)
 {
@@ -33,6 +35,7 @@ t_stack	*find_last(t_stack *stack)
 		stack = stack->next;
 	return (stack);
 }
+
 // returns the size of the stack
 int	stack_size(t_stack *stack)
 {
@@ -46,6 +49,7 @@ int	stack_size(t_stack *stack)
 	}
 	return (count);
 }
+
 // finds and returns min val
 int	min_val(t_stack *stack)
 {
@@ -79,4 +83,3 @@ int	max_val(t_stack *stack)
 	}
 	return (max);
 }
-

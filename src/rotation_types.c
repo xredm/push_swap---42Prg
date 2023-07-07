@@ -6,7 +6,7 @@
 /*   By: xredm <xredm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:09:29 by xredm             #+#    #+#             */
-/*   Updated: 2023/07/07 16:54:34 by xredm            ###   ########.fr       */
+/*   Updated: 2023/07/07 17:36:01 by xredm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 //here we decide which comb is the best from a to b
 int	rotation_type2b(t_stack *a, t_stack *b)
 {
-	int	i;
+	int		i;
 	t_stack	*tmp;
 
 	tmp = a;
@@ -33,10 +33,11 @@ int	rotation_type2b(t_stack *a, t_stack *b)
 	}
 	return (i);
 }
+
 // here we choose which comb for rotation is the best fitting from B to A
 int	rotation_type2a(t_stack *a, t_stack *b)
 {
-	int	i;
+	int		i;
 	t_stack	*tmp;
 
 	tmp = b;

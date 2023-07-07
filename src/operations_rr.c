@@ -6,7 +6,7 @@
 /*   By: xredm <xredm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 13:34:48 by xredm             #+#    #+#             */
-/*   Updated: 2023/07/07 16:51:56 by xredm            ###   ########.fr       */
+/*   Updated: 2023/07/07 17:35:03 by xredm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	rr_apply(t_stack **s)
 	}
 	temp->next = NULL;
 }
+
 // reverse rotate a by shifting all elements by 1 down, last becomes first
 void	rra(t_stack **a, int flag)
 {
@@ -41,6 +42,7 @@ void	rra(t_stack **a, int flag)
 	if (flag == 0)
 		ft_printf("rra\n");
 }
+
 //reverse rotate b by shifting them all by 1 down, last one becomes first
 void	rrb(t_stack **b, int flag)
 {
@@ -48,6 +50,7 @@ void	rrb(t_stack **b, int flag)
 	if (flag == 0)
 		ft_printf("rrb\n");
 }
+
 void	rrr(t_stack **a, t_stack **b, int flag)
 {
 	rr_apply(a);

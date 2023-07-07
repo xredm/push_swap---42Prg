@@ -6,13 +6,14 @@
 /*   By: xredm <xredm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:40:25 by xredm             #+#    #+#             */
-/*   Updated: 2023/07/07 16:50:15 by xredm            ###   ########.fr       */
+/*   Updated: 2023/07/07 17:43:25 by xredm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
 // we check if current node's value isn't bigger than next one ret 1 if sorted
-int is_sorted(t_stack *stack)
+int	is_sorted(t_stack *stack)
 {
 	int	value;
 
@@ -28,6 +29,7 @@ int is_sorted(t_stack *stack)
 	}
 	return (1);
 }
+
 //compares a node to with others -> goes to next node and does it till all done
 int	is_duplicate(t_stack *stack)
 {

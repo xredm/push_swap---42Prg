@@ -6,11 +6,12 @@
 /*   By: xredm <xredm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 14:08:59 by xredm             #+#    #+#             */
-/*   Updated: 2023/07/07 16:50:56 by xredm            ###   ########.fr       */
+/*   Updated: 2023/07/07 17:38:04 by xredm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
 //makes a new node with the number and sets next one to NULL
 t_stack	*create_new_node(int element)
 {
@@ -23,6 +24,7 @@ t_stack	*create_new_node(int element)
 	new->next = NULL;
 	return (new);
 }
+
 //assigns a new node or a new last (adds last back)
 void	add_node_back(t_stack **stack, t_stack *new)
 {
@@ -33,6 +35,7 @@ void	add_node_back(t_stack **stack, t_stack *new)
 	else
 		(find_last(*stack))->next = new;
 }
+
 //differs from ft_atoi that it checks for max int and prints errors
 int	modified_atoi(const char *arr)
 {
@@ -61,6 +64,7 @@ int	modified_atoi(const char *arr)
 		print_error();
 	return (res * sign);
 }
+
 //Here we must check if more arguments are actually passed inside the quotes
 // Then add them accordingly
 t_stack	*fill_42(char **av)
@@ -83,6 +87,7 @@ t_stack	*fill_42(char **av)
 	free(tmp);
 	return (input);
 }
+
 // 1. Here we check if the number of inputs is legit or print error
 // 2. if count is 2, then we fill for two
 // 3. Else we check the legitimacy of the number (not > max int) then add back 
