@@ -6,7 +6,7 @@
 /*   By: xredm <xredm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 15:25:55 by xredm             #+#    #+#             */
-/*   Updated: 2023/07/07 12:55:47 by xredm            ###   ########.fr       */
+/*   Updated: 2023/07/07 16:42:45 by xredm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_stack *fill_stack(int ac, char **av);
 void	print_prompt(void);
 void	print_error(void);
 t_stack	*fill_42(char **av);
-int	modified_atoi(char *arr);
+int	modified_atoi(const char *arr);
 void	add_node_back(t_stack **stack, t_stack *new);
 t_stack	*create_new_node(int element);
 void	free_stack(t_stack **stack);
@@ -71,5 +71,10 @@ void	rb(t_stack **b, int flag);
 void	rr(t_stack **a, t_stack **b, int flag);
 void	rrr(t_stack **a, t_stack **b, int flag);
 void	sb(t_stack **b, int flag);
+void	free_str(char **str);
+void	s_apply(t_stack **s);
+void	r_apply(t_stack **s);
+void	rr_apply(t_stack **s);
+void	p_apply(t_stack **first, t_stack **second);
 
 #endif

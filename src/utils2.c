@@ -6,7 +6,7 @@
 /*   By: xredm <xredm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:12:53 by xredm             #+#    #+#             */
-/*   Updated: 2023/07/07 12:49:24 by xredm            ###   ########.fr       */
+/*   Updated: 2023/07/07 16:54:21 by xredm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,19 @@ int	find_place_in_a(t_stack *a, int num)
 		}
 	}
 	return (i);
+}
+
+void	free_str(char **str)
+{
+	char	*a;
+
+	if (!str)
+		return ;
+	while (*str)
+	{
+		a = *str;
+		str++;
+		free(a);
+	}
+	*str = NULL;
 }

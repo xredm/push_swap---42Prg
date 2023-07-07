@@ -6,50 +6,43 @@
 /*   By: xredm <xredm@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 14:27:53 by xredm             #+#    #+#             */
-/*   Updated: 2023/06/18 15:22:40 by xredm            ###   ########.fr       */
+/*   Updated: 2023/07/07 16:51:33 by xredm            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+void	r_apply(t_stack **s)
+{
+	t_stack	*temp;
+
+	if (!*s || !(*s)->next)
+		return ;
+	temp = *s;
+	*s = find_last(*s);
+	(*s)->next = temp;
+	*s = temp->next;
+	temp->next = NULL;
+}
 // rotate a by shifting all elements up by 1, first element becomes last
 void	ra(t_stack **a, int flag)
 {
-	t_stack	*tmp;
-
-	if (!*a || !((*a)->next))
-		return ;
-	tmp = *a;
-	*a = find_last(*a);
-	(*a)->next = tmp;
-	*a = tmp->next;
-	tmp->next = NULL;
+	r_apply(a);
 	if (flag == 0)
-		write(1, "ra\n", 3);
+		ft_printf("ra\n");
 }
 // rotate b by shifting all elements up by 1, first element becomes last
 void	rb(t_stack **b, int flag)
 {
-	t_stack	*tmp;
-
-	if (!*b || !((*b)->next))
-		return ;
-	tmp = *b;
-	*b = find_last(*b);
-	(*b)->next = tmp;
-	*b = tmp->next;
-	tmp->next = NULL;
+	r_apply(b);
 	if (flag == 0)
-		write(1, "rb\n", 3);
+		ft_printf("rb\n");
 }
-
 // ra and rb at the same time
 void	rr(t_stack **a, t_stack **b, int flag)
 {
-	if (!*a || !*b || !((*a)->next) || !((*b)->next))
-		return ;
-	ra(a, 1);
-	rb(b, 1);
+	r_apply(a);
+	r_apply(b);
 	if (flag == 0)
-		write(1, "rr\n", 3);
+		ft_printf("rr\n");
 }
